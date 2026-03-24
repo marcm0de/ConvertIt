@@ -16,6 +16,7 @@ import EncodingConverter from '@/components/EncodingConverter';
 import HashGenerator from '@/components/HashGenerator';
 import HistoryPanel from '@/components/HistoryPanel';
 import FavoritesPanel from '@/components/FavoritesPanel';
+import QuickConvert from '@/components/QuickConvert';
 
 const tabs: { id: TabId; label: string; icon: React.ElementType }[] = [
   { id: 'units', label: 'Units', icon: Ruler },
@@ -131,6 +132,7 @@ export default function Home() {
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-8">
+          <QuickConvert />
           <div className="flex gap-6">
             {/* Converter */}
             <div className="flex-1 min-w-0">

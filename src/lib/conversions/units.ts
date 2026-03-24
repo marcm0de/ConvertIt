@@ -83,6 +83,20 @@ export const unitCategories: UnitCategory[] = [
     ],
   },
   {
+    name: 'Cooking',
+    units: [
+      { id: 'cook-cup', label: 'Cup', factor: 236.588 },
+      { id: 'cook-tbsp', label: 'Tablespoon', factor: 14.787 },
+      { id: 'cook-tsp', label: 'Teaspoon', factor: 4.929 },
+      { id: 'cook-ml', label: 'Milliliter', factor: 1 },
+      { id: 'cook-l', label: 'Liter', factor: 1000 },
+      { id: 'cook-floz', label: 'Fluid Ounce', factor: 29.574 },
+      { id: 'cook-pt', label: 'Pint', factor: 473.176 },
+      { id: 'cook-qt', label: 'Quart', factor: 946.353 },
+      { id: 'cook-gal', label: 'Gallon', factor: 3785.41 },
+    ],
+  },
+  {
     name: 'Data',
     units: [
       { id: 'bit', label: 'Bit', factor: 1 },
