@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ConvertIt
 
-## Getting Started
+> One tool for all conversions. Fast, private, client-side.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+## ✨ Features
+
+### 📏 Unit Converter
+7 categories with 50+ unit types: Length, Weight, Temperature, Speed, Area, Volume, Data Storage.
+
+### 🎨 Color Converter
+Convert between HEX, RGB, HSL, and CMYK with a live visual preview and color picker.
+
+### 🔢 Number Base Converter
+Binary ↔ Decimal ↔ Hexadecimal ↔ Octal with a bit-level display.
+
+### 🌍 Timezone Converter
+Convert times between 14 major timezones with a live world clock.
+
+### 💱 Currency Converter
+10 major currencies with mock exchange rates (USD, EUR, GBP, JPY, CAD, AUD, CHF, CNY, INR, BRL).
+
+### 🔐 Data Encoding
+Base64, URL encoding, and HTML entity encode/decode.
+
+### #️⃣ Hash Generator
+MD5, SHA-1, SHA-256, and SHA-512 using the Web Crypto API — your data never leaves the browser.
+
+### 📋 History & Favorites
+- Last 20 conversions saved automatically
+- Pin frequently used conversions as favorites
+
+### 🌙 Dark/Light Mode
+Toggle between themes with persistent preference.
+
+### ⌨️ Keyboard Shortcuts
+Press `Tab` to swap source and target values.
+
+## 🚀 Getting Started
 
 ```bash
+# Clone the repo
+git clone https://github.com/yourusername/ConvertIt.git
+cd ConvertIt
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to use the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **State:** Zustand (with persistence)
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Crypto:** Web Crypto API (SHA hashes), JS implementation (MD5)
 
-## Learn More
+## 🔒 Privacy
 
-To learn more about Next.js, take a look at the following resources:
+All conversions happen entirely in your browser. No data is sent to any server. Zero tracking.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE) — use it however you want.
