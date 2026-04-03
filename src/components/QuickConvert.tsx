@@ -51,8 +51,12 @@ const COMMON_ALIASES: Record<string, string> = {
   'gallons': 'cook-gal', 'gallon': 'cook-gal',
   'pints': 'cook-pt', 'pint': 'cook-pt',
   'quarts': 'cook-qt', 'quart': 'cook-qt',
-  'bits': 'bit', 'bytes': 'byte',
-  'kilobytes': 'kb', 'megabytes': 'mb', 'gigabytes': 'gb', 'terabytes': 'tb',
+  'bits': 'bit', 'bytes': 'byte', 'nibbles': 'nibble', 'nibble': 'nibble',
+  'kilobytes': 'kb', 'megabytes': 'mb', 'gigabytes': 'gb', 'terabytes': 'tb', 'petabytes': 'pb',
+  'kibibytes': 'kib', 'mebibytes': 'mib', 'gibibytes': 'gib', 'tebibytes': 'tib',
+  'kibibyte': 'kib', 'mebibyte': 'mib', 'gibibyte': 'gib', 'tebibyte': 'tib',
+  'b': 'byte', 'kb': 'kb', 'mb': 'mb', 'gb': 'gb', 'tb': 'tb', 'pb': 'pb',
+  'kib': 'kib', 'mib': 'mib', 'gib': 'gib', 'tib': 'tib',
 };
 
 Object.entries(COMMON_ALIASES).forEach(([alias, id]) => {
@@ -159,6 +163,26 @@ export default function QuickConvert() {
       )}
       {error && (
         <p className="mt-2 text-xs text-red-500">{error}</p>
+      )}
+      {!result && !error && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          <span className="text-xs text-gray-400 dark:text-gray-500">Try:</span>
+          {[
+            '100 fahrenheit to celsius',
+            '5 miles in km',
+            '1 gb in mb',
+            '500 grams to pounds',
+            '10 kib in bytes',
+          ].map((ex) => (
+            <button
+              key={ex}
+              onClick={() => { setQuery(ex); const res = parseQuery(ex); if (res) { setResult(res); setError(''); } }}
+              className="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );
