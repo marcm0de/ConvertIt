@@ -133,10 +133,13 @@ export default function QuickConvert() {
   };
 
   return (
-    <div className="mb-6 p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-      <div className="flex items-center gap-2 mb-3">
-        <Zap size={18} className="text-yellow-500" />
-        <h3 className="font-semibold text-gray-900 dark:text-white text-sm">Quick Convert</h3>
+    <div className="mb-8 p-6 rounded-2xl border-2 border-blue-200 dark:border-blue-800/50 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-950/30 dark:via-gray-900 dark:to-indigo-950/20 shadow-lg shadow-blue-500/5 dark:shadow-blue-500/10">
+      <div className="flex items-center gap-2.5 mb-4">
+        <div className="p-1.5 rounded-lg bg-yellow-400/20 dark:bg-yellow-500/15">
+          <Zap size={20} className="text-yellow-500" />
+        </div>
+        <h3 className="font-bold text-gray-900 dark:text-white text-base">Quick Convert</h3>
+        <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">Natural Language</span>
       </div>
       <div className="flex gap-2">
         <input
@@ -145,28 +148,28 @@ export default function QuickConvert() {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleConvert()}
           placeholder='Type "5 miles in km" or "200 celsius to fahrenheit"'
-          className="flex-1 px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
         />
         <button
           onClick={handleConvert}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
+          className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl text-sm font-semibold hover:from-blue-600 hover:to-indigo-600 transition-all shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/30 active:scale-[0.98]"
         >
           Convert
         </button>
       </div>
       {result && (
-        <div className="mt-3 p-3 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
-          <div className="text-lg font-bold text-green-700 dark:text-green-400">
-            {result.input} = {result.output}
+        <div className="mt-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 shadow-sm">
+          <div className="text-xl font-bold text-green-700 dark:text-green-400">
+            {result.input} <span className="text-green-400 dark:text-green-600">=</span> {result.output}
           </div>
         </div>
       )}
       {error && (
-        <p className="mt-2 text-xs text-red-500">{error}</p>
+        <p className="mt-3 text-xs text-red-500 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg border border-red-200 dark:border-red-800/30">{error}</p>
       )}
       {!result && !error && (
-        <div className="mt-3 flex flex-wrap gap-2">
-          <span className="text-xs text-gray-400 dark:text-gray-500">Try:</span>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">Try:</span>
           {[
             '100 fahrenheit to celsius',
             '5 miles in km',
@@ -177,7 +180,7 @@ export default function QuickConvert() {
             <button
               key={ex}
               onClick={() => { setQuery(ex); const res = parseQuery(ex); if (res) { setResult(res); setError(''); } }}
-              className="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-xs px-3 py-1.5 rounded-lg bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-700 transition-all hover:border-blue-300 dark:hover:border-blue-700 shadow-sm"
             >
               {ex}
             </button>

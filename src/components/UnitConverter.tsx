@@ -50,10 +50,10 @@ export default function UnitConverter() {
           <button
             key={c.name}
             onClick={() => setCategory(i)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
               i === category
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md shadow-blue-500/25'
+                : 'bg-gray-100 dark:bg-gray-700/80 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-transparent hover:border-gray-300 dark:hover:border-gray-500'
             }`}
           >
             {c.name}
